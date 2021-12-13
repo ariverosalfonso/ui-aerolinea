@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { UsuarioModelo } from '../../../../interfaces/usuario';
 import { UsuarioService } from 'src/app/servicios/usuario.service';
 import Swal from 'sweetalert2';
+import { AeropuertoModelo } from '../../../../interfaces/aeropuerto';
+import { AeropuertoService } from '../../../../servicios/aeropuerto.service';
 
 @Component({
   selector: 'app-create',
@@ -15,8 +17,11 @@ export class CreateComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService,
-    private router: Router
+    private router: Router,
+    private aeropuertoService: AeropuertoService,
+
   ) { }
+  listadoAeropuertos: AeropuertoModelo[] = []
   fgValidacion = this.fb.group({
     nombre: ['', [Validators.required]],
     apellidos: ['', [Validators.required]],

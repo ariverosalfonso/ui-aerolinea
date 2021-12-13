@@ -1,1 +1,6 @@
-<p>create works!</p>
+<div class="input-field col s12">
+    <select class="browser-default" formControlName="origen" >
+      <option value="" disabled selected>Seleccione la estacion</option>
+      <option *ngFor="let estacion of listadoEstaciones" value="{{estacion.nombre}} - {{estacion.ciudad}}">{{estacion.nombre}} - {{estacion.ciudad}}</option>
+    </select>
+  </div>
