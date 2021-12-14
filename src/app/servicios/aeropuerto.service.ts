@@ -10,7 +10,8 @@ import { AeropuertoModelo } from '../interfaces/aeropuerto';
 })
 export class AeropuertoService {
 
-  url = "https://apiloopbackequipo20mintic.herokuapp.com"
+  url = "http://localhost:3000"
+  // url = "https://apiloopbackequipo20mintic.herokuapp.com"
   token: string = ''
   constructor(
     private http: HttpClient,
@@ -25,7 +26,9 @@ export class AeropuertoService {
       ciudad: aeropuerto.ciudad,
       telefono: aeropuerto.pais,
       coordx: aeropuerto.coordx,
-      coordy:aeropuerto.coordy
+      coordy:aeropuerto.coordy,
+      siglas:aeropuerto.siglas,
+      tipo:aeropuerto.tipo
     });
   }
   //Array de aeropuertos
@@ -44,7 +47,9 @@ export class AeropuertoService {
       ciudad: aeropuerto.ciudad,
       telefono: aeropuerto.pais,
       coordx: aeropuerto.coordx,
-      coordy:aeropuerto.coordy
+      coordy:aeropuerto.coordy,
+      siglas:aeropuerto.siglas,
+      tipo:aeropuerto.tipo
     }, {
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token}`

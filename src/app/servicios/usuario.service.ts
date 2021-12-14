@@ -9,7 +9,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UsuarioService {
-  url = "https://apiloopbackequipo20mintic.herokuapp.com"
+  // url = "https://apiloopbackequipo20mintic.herokuapp.com"
+  url = "http://localhost:3000"
   token: string = ''
   constructor(
     private http: HttpClient,

@@ -13,15 +13,14 @@ import { AeropuertoService } from '../../../../servicios/aeropuerto.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-
-  constructor(
+    constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService,
     private router: Router,
-    private aeropuertoService: AeropuertoService,
+
 
   ) { }
-  listadoAeropuertos: AeropuertoModelo[] = []
+
   fgValidacion = this.fb.group({
     nombre: ['', [Validators.required]],
     apellidos: ['', [Validators.required]],
@@ -47,7 +46,6 @@ export class CreateComponent implements OnInit {
       alert("Error en el envio");
     })
   }
-
   
 
 }
